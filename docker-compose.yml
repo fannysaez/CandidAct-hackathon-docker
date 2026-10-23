@@ -1,0 +1,36 @@
+services:
+  backend:
+    build:
+      context: ./CandidAct-hackathon-backend
+    ports:
+      - "8000:80"
+    env_file:
+      - ./CandidAct-hackathon-backend/.env
+      - ./CandidAct-hackathon-backend/.env.local
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./CandidAct-hackathon-frontend
+    ports:
+      - "4200:4200"
+    volumes:
+      - ./CandidAct-hackathon-frontend:/app
+      - /app/node_modules
+    depends_on:
+      - backend
+
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: app_user
+      POSTGRES_PASSWORD: app_password
+      POSTGRES_DB: candidact
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:

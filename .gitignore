@@ -1,0 +1,16 @@
+# Variables d'environnement locales (si utilisées dans ce dépôt)
+.env
+.env.local
+
+# Système
+.DS_Store
+Thumbs.db
+
+# IDE / éditeurs
+.vscode/*
+!.vscode/settings.json
+.idea/
+
+# Dépôts frontend/backend clonés localement (versionnés séparément)
+CandidAct-hackathon-backend/
+CandidAct-hackathon-frontend/
