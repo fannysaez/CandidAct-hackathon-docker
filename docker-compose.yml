@@ -24,8 +24,8 @@ services:
   db:
     image: postgres:16-alpine
     environment:
-      POSTGRES_USER: app_user
-      POSTGRES_PASSWORD: app_password
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
       POSTGRES_DB: candidact
     ports:
       - "5432:5432"
