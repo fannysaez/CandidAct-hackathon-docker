@@ -22,15 +22,25 @@ services:
       - backend
 
   db:
-    image: postgres:16-alpine
+    image: mariadb:11
     environment:
-      POSTGRES_USER: root
-      POSTGRES_PASSWORD: root
-      POSTGRES_DB: candidact
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_DATABASE: candidact
     ports:
-      - "5432:5432"
+      - "3306:3306"
     volumes:
-      - db_data:/var/lib/postgresql/data
+      - db_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: root
+    ports:
+      - "5050:80"
+    depends_on:
+      - db
 
 volumes:
   db_data:
