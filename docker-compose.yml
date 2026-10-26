@@ -7,6 +7,9 @@ services:
     env_file:
       - ./CandidAct-hackathon-backend/.env
       - ./CandidAct-hackathon-backend/.env.local
+    volumes:
+      - ./CandidAct-hackathon-backend:/var/www/html
+      - /var/www/html/vendor
     depends_on:
       - db
 
