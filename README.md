@@ -150,4 +150,5 @@ Résumé des étapes (détail complet dans la documentation PDF, voir plus bas) 
 ## Documentation complémentaire
 
 (Un wiki GitHub pourra être mis en place en complément de ce README, pour centraliser la documentation technique de l'équipe au fil du projet.)
+
 ---
